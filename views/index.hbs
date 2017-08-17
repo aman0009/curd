@@ -1,0 +1,83 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<section class="insert">
+<h4>INSERT DATA</h4>
+<form action="/insert" method="post">
+<table>
+<tr>
+ <td>Name:</td>
+ <td><input type="text" name="name"></td>
+</tr>
+<tr>
+ <td>Username:</td>
+ <td><input type="text" name="username"></td>
+</tr>
+<tr>
+ <td>password:</td>
+ <td><input type="password" name="password"></td>
+</tr>
+<tr>
+ <td></td>
+ <td><input type="submit" value="submit"></td>
+</tr>
+</table>
+</form>
+<section>
+
+<section class="get">
+<h1>GET DATA</h1>
+ <a href="/get-data">LOAD DATA</a>
+<div>
+ {{# each items}}
+ <article class="item">
+   <div>Name: {{this.name}}</div>
+   <div>Username: {{this.username}}</div>
+   <div>Password: {{this.password}}</div>
+   <div>ID: {{this._id}}</div>
+ </article>
+{{/each}}
+<section>
+
+<h1>UPDATE DATA</h1>
+<section class="update">
+<form action="/update" method="post">
+<table>
+<tr>
+     <td>Id:</td>
+     <td><input type="text" name="id"></td>
+</tr>
+ <tr>
+   <td>Name:</td>
+   <td><input type="text" name="name"></td>
+  </tr>
+  <tr>
+   <td>Username:</td>
+   <td><input type="text" name="username"></td>
+  </tr>
+  <tr>
+   <td>password:</td>
+   <td><input type="password" name="password"></td>
+  </tr>
+  <tr>
+   <td>UPDATE</td>
+   <td><input type="submit" value="submit"></td>
+  </tr>
+  </table>
+  </form>
+<section>
+
+<h1>DELETE</h1>
+<section class="delete">
+<form action="/delete" method="post">
+<table>
+  <tr>
+    <td>Id</td>
+    <td><input type="text" name="id"></td>
+  </tr>
+  <tr>
+    <td>DELETE</td>
+    <td><input type="submit" value="submit"></td>
+  </tr>
+</form>
+</section>
